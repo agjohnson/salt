@@ -34,7 +34,8 @@ def __virtual__():
                                 'list_groups', 'list_users', '__virtual__'):
                     delattr(mod, attr)
     return (
-        'user' if __grains__['kernel'] in ('Linux', 'Darwin', 'OpenBSD')
+        'user' if __grains__['kernel'] in ('Linux', 'Darwin', 'OpenBSD',
+                                           'NetBSD')
         else False
     )
 
